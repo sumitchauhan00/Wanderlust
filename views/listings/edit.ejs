@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>Edit Your List</h3>
+    <form method="post"  action="/listing/<%=list._id%>?_method=PUT" novalidate class="needs-validation">
+        
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="list[title]" value=" <%=list.title%>" class="form-control" required>
+              <div class="invalid-feedback">Title is must!</div>
+        </div>
+       <div class="mb-3">
+           <label for="description" class="form-label">Description</label>
+           <textarea name="list[description]" class="form-control" required><%=list.description%> </textarea>
+             <div class="invalid-feedback">description is must!</div>
+        </div>
+        <div class="mb-3">
+            
+            <label for="image" class="form-label">image</label>
+            <input type="text" name="list[image]" class="form-control" value=" <%=list.image.url%>">
+        </div>
+
+        <div class="row ">
+             <div class="mb-3 col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="list[price]" class="form-control" value="<%= list.price %>" required>
+                  <div class="invalid-feedback">Price is must!</div>
+             </div>
+
+              <div class="mb-3 col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" name="list[country]" class="form-control" value=" <%=list.country%>" required>
+                  <div class="invalid-feedback">country is must!</div>
+             </div>
+
+        </div>
+       
+        <div class="mb-3"> 
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="list[location]" class="form-control" value=" <%=list.location%>" required>
+              <div class="invalid-feedback">location is must!</div>
+        </div>
+       
+        
+        <button class="submit btn btn-success">submit</button>
+    </form>
+    </div>
+    </div>
+    <br>
+</body>
