@@ -3,7 +3,8 @@ const initdata = require("./data")
 const listing = require("../models/listing")
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust"
+const MONGO_URL = "mongodb+srv://sumitchauhan2764_db_user:cvYslkV3ViEcjjsa@cluster0.ox62lej.mongodb.net/?appName=Cluster0"
+
 main().then((res)=>{
     console.log("connected successfully")
 })

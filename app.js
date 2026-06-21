@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
@@ -13,17 +14,17 @@ app.use(express.urlencoded({extended : true}));
 app.use(methodoverride("_method"));
 app.engine('ejs',ejsMate);
 
+const dbUrl = process.env.MONGO_URL;
 
-
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust"
 main().then((res)=>{
+  
     console.log("connected successfully")
 })
 .catch((err)=>{
     console.log(err);
 })
 async function main(){
-   await mongoose.connect(MONGO_URL)
+   await mongoose.connect(dbUrl);
 }
 
 app.get("/",(req,res)=>{
