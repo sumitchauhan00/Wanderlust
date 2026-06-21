@@ -26,9 +26,9 @@ async function main(){
    await mongoose.connect(MONGO_URL)
 }
 
-app.get("/",(req,res)=>{
-    res.send("home route is working")
-})
+// app.get("/",(req,res)=>{
+//     res.send("home route is working")
+// })
 //index route
 app.get("/listing",async (req , res)=>{
   const lists = await listing.find({});
